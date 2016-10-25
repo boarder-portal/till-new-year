@@ -1,12 +1,12 @@
-const path = require('path');
 const express = require('express');
 
 const port = 9999;
+const root = __dirname;
 const app = express();
 
-app.set('views', path.resolve('./'));
+app.set('views', root);
 app.set('view engine', 'pug');
-app.use('/', express.static(path.resolve('./')));
+app.use('/', express.static(root));
 app.use('/', (req, res) => {
   res.render('index');
 });
