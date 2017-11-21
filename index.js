@@ -22,7 +22,7 @@ const captionSwitcher = switcher('call', '')
   .case((x) => x <= 86400, 'Getting close...');
 
 D(100).interval(() => {
-  const diff = date(date(`1-1-${new Date().getFullYear()}`).time() - now()).time();
+  const diff = date(date(`1-1-${new Date().getFullYear() + 1}`).time() - now()).time();
   const secs = D(diff / 1000).floor;
   const minsAndSecs = secs%3600;
   let hours = D(secs / 3600).floor;
