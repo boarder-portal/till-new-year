@@ -1,7 +1,6 @@
 const { date, now, find, switcher } = D;
 const caption = find('#caption');
 const timeDiv = find('#time');
-const newYear = date('2016-12-31T19:00:00.000Z').time();
 const numbers = [
   'ZERO',
   'ONE',
@@ -23,7 +22,7 @@ const captionSwitcher = switcher('call', '')
   .case((x) => x <= 86400, 'Getting close...');
 
 D(100).interval(() => {
-  const diff = date(newYear - now()).time();
+  const diff = date(date(`1-1-${new Date().getFullYear()}`).time() - now()).time();
   const secs = D(diff / 1000).floor;
   const minsAndSecs = secs%3600;
   let hours = D(secs / 3600).floor;
