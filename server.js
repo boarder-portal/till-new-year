@@ -6,8 +6,8 @@ const app = express();
 
 app.set('views', root);
 app.set('view engine', 'pug');
-app.use('/', express.static(root));
-app.use('/', (req, res) => {
+app.use('/tny', express.static(root));
+app.use('/tny', (req, res) => {
   res.render('index');
 });
 
