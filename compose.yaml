@@ -1,0 +1,14 @@
+services:
+  server:
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 8999:8999
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - 80:80
